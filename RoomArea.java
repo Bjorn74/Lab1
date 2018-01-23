@@ -6,10 +6,13 @@ public class RoomArea {
 		// TODO Auto-generated method stub
 
 		// Initialize Variables & stuff
-		int[] vDimen = new int[2];
+		float[] vDimen = new float[2];
 		String vCont = "Y";
 		Scanner scan = new Scanner(System.in);
 
+		System.out.println("Welcome to Grand Circus' Room Detail Generator!");
+		System.out.println();
+		
 		while (vCont.matches("[yY]")) {
 
 			// Call dimensions method.
@@ -17,10 +20,9 @@ public class RoomArea {
 			vDimen = dimensions();
 
 			// Print Result
-			System.out.println("The room is " + vDimen[0] + " by " + vDimen[1] + ".");
-			System.out.println(
-					"The room is " + (vDimen[0] * vDimen[1]) + " square generally agreed upon units of measure.");
-			System.out.println("The room's perimeter is " + (2 * (vDimen[0] + vDimen[1])) + " of that same unit.");
+			//System.out.println("The room is " + vDimen[0] + " by " + vDimen[1] + ".");
+			System.out.println("Area " + (vDimen[0] * vDimen[1]));
+			System.out.println("Perimeter: " + (2 * (vDimen[0] + vDimen[1])));
 
 			// Ask if they want to do it again.
 			String vContInput = "Q";
@@ -28,7 +30,7 @@ public class RoomArea {
 			while (vContInput.matches("[^ynYN]")) {
 
 				System.out.println();
-				System.out.println(" Would you like to play again? Y/N");
+				System.out.println("Continue? (Y/N)");
 				vContInput = scan.next();
 				vCont = vContInput;
 
@@ -47,21 +49,21 @@ public class RoomArea {
 
 	}
 
-	public static int[] dimensions() {
+	public static float[] dimensions() {
 
 		// Prepare the Troops
 		Scanner scan = new Scanner(System.in);
 
 		// Declare Variables
-		int[] vDim = new int[2];
-		int vX;
-		int vY;
+		float[] vDim = new float[2];
+		float vX;
+		float vY;
 
 		// Get Input from User
-		System.out.println("Please enter the first dimension: ");
-		vX = scan.nextInt();
-		System.out.println("Please enter the second dimiension: ");
-		vY = scan.nextInt();
+		System.out.println("Enter Length: ");
+		vX = scan.nextFloat();
+		System.out.println("Enter Width: ");
+		vY = scan.nextFloat();
 
 		// Validate Input
 		// If I have Time...
